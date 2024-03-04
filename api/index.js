@@ -154,9 +154,15 @@ app.use(passport.session());
 // -----------------  ROUTING  ----------------- //
 // --------------------------------------------- //
 
+app.use(express.static(path.resolve(__dirname, "../dist")));
+
 app.get("/", (req, res) => {
-  res.send("Something...");
+  response.sendFile(path.resolve(__dirname, "../dist", "index.html"));
 });
+
+// app.get("/", (req, res) => {
+//   res.send("Something...");
+// });
 
 app.get("/api/current-session", (req, res) => {
   if (!req.isAuthenticated()) {
