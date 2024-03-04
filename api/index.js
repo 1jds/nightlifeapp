@@ -154,12 +154,6 @@ app.use(passport.session());
 // -----------------  ROUTING  ----------------- //
 // --------------------------------------------- //
 
-app.use(express.static(path.resolve(__dirname, "./dist")));
-
-app.get("/", (req, res) => {
-  response.sendFile(path.resolve(__dirname, "./dist", "index.html"));
-});
-
 // app.get("/", (req, res) => {
 //   res.send("Something...");
 // });
@@ -458,6 +452,12 @@ app.post("/api/yelp-data/:location", async (req, res) => {
     console.error(error);
     return res.status(500).json({ error: "Internal Server Error" });
   }
+});
+
+app.use(express.static(path.resolve(__dirname, "./dist")));
+
+app.get("/", (req, res) => {
+  response.sendFile(path.resolve(__dirname, "./dist", "index.html"));
 });
 
 // --------------------------------------------- //
