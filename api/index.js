@@ -35,7 +35,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false })); // Probably won't use this...
 app.use(cookieParser());
 // ----- TO SERVE THE REACT FRONT-END ----- //
-app.use(express.static("dist"));
+// app.use(express.static("dist"));
 
 // --------------------------------------------- //
 // -----------  DATABASE CONNECTION  ----------- //
@@ -150,6 +150,8 @@ app.use(passport.session());
 // --------------------------------------------- //
 // -----------------  ROUTING  ----------------- //
 // --------------------------------------------- //
+
+app.get("/", express.static("dist"));
 
 app.get("/api/current-session", (req, res) => {
   if (!req.isAuthenticated()) {
