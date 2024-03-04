@@ -22,6 +22,7 @@ const API_KEY = process.env.YELP_API_KEY;
 // -------- CORS -------- //
 const acceptedOrigins = [
   /^https:\/\/nightlife-8ddy\.onrender\.com.*/,
+  /^https:\/\/nightlifeapp\.vercel\.app/,
   /^https:\/\/github\.com.*/,
 ];
 app.use(
