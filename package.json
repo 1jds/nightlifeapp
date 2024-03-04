@@ -2,13 +2,13 @@
   "name": "nightlife-app",
   "version": "1.0.0",
   "description": "Nightlife Coordination App",
-  "main": "app.js",
+  "main": "index.js",
   "repository": "https://github.com/1jds/nightlifeapp",
   "author": "1jds",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "node app.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
