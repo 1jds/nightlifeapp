@@ -4,7 +4,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const GitHubStrategy = require("passport-github2").Strategy;
 const bcrypt = require("bcrypt");
-const fetch = require("node-fetch");
+const nodeFetch = require("node-fetch");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const { Pool } = require("pg");
@@ -226,7 +226,7 @@ app.get(
   }
 );
 
-app.get("/api/logout", (req, res) => {
+app.get("/api/logout", (req, res, next) => {
   req.logout((err) => {
     if (err) {
       return next(err);
@@ -332,7 +332,7 @@ app.post("/api/venue-remove", async (req, res) => {
     );
     return res.json({
       removeSuccessful: false,
-      error: err,
+      error,
     });
   } finally {
     client.release();
@@ -389,7 +389,7 @@ app.get("/api/get-venues-attending/:venueYelpId", async (req, res) => {
     },
   };
   try {
-    const response = await fetch(url, options);
+    const response = await nodeFetch(url, options);
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
@@ -428,7 +428,7 @@ app.post("/api/yelp-data/:location", async (req, res) => {
     },
   };
   try {
-    const response = await fetch(url, options);
+    const response = await nodeFetch(url, options);
     if (response.status === 400) {
       return res.status(400).json({
         locationFound: false,
@@ -461,7 +461,7 @@ async function insertNewUserIntoDb(username, password) {
     );
     return result.rows[0];
   } catch (error) {
-    console.error("Error inserting user into the database", err);
+    console.error("Error inserting user into the database", error);
   }
 }
 
