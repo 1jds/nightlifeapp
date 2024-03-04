@@ -9,6 +9,7 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const { Pool } = require("pg");
 const pgSession = require("connect-pg-simple")(session);
+const path = require("path");
 
 // --------------------------------------------- //
 // -------------  GENERAL SETUP  --------------- //
@@ -151,7 +152,7 @@ app.use(passport.session());
 // -----------------  ROUTING  ----------------- //
 // --------------------------------------------- //
 
-app.get("/", express.static("dist"));
+app.get("/", express.static(path.join(__dirname, "dist")));
 
 app.get("/api/current-session", (req, res) => {
   if (!req.isAuthenticated()) {
