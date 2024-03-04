@@ -154,7 +154,7 @@ app.use(passport.session());
 // -----------------  ROUTING  ----------------- //
 // --------------------------------------------- //
 
-app.get("/", express.static(path.join(__dirname, "dist")), (req, res) => {
+app.get("/", (req, res) => {
   res.send("Something...");
 });
 
