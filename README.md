@@ -1,17 +1,15 @@
-# Nightlife App
+# README
 
-This repo completes the coding-interview-prep take-home-project [**_Build A Nightlife Coordination App_**](https://www.freecodecamp.org/learn/coding-interview-prep/take-home-projects/build-a-nightlife-coordination-app) from FreeCodeCamp. To see the full details of the original challenge click on the link above. The specifications for the app are as follows:
+This is the [Express](https://expressjs.com) [Hello world](https://expressjs.com/en/starter/hello-world.html) example on [Render](https://render.com).
 
-### Build a full stack JavaScript app
+The app in this repo is deployed at [https://express.onrender.com](https://express.onrender.com).
 
-Here are the specific user stories you should implement for this project:
+## Deployment
 
-- User Story: As an _unauthenticated_ user, you can view all bars in your area.
-- User Story: As an _unauthenticated_ user, when you login you should not have to search again.
-- User Story: As an authenticated user, you can add yourself to a bar to indicate you are going there tonight.
-- User Story: As an authenticated user, you can remove yourself from a bar if you no longer want to go there.
+See https://render.com/docs/deploy-node-express-app or follow the steps below:
 
-### Technologies used
+Create a new web service with the following values:
+  * Build Command: `yarn`
+  * Start Command: `node app.js`
 
-- Front-end: React
-- Back-end: Node, Express, Passport, PostgreSQL
+That's it! Your web service will be live on your Render URL as soon as the build finishes.

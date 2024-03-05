@@ -1,14 +1,14 @@
 {
   "name": "nightlife-app",
   "version": "1.0.0",
-  "description": "Nightlife Coordination App",
-  "main": "index.js",
-  "repository": "https://github.com/1jds/nightlifeapp",
+  "description": "Night Life App Server",
+  "main": "app.js",
+  "repository": "",
   "author": "1jds",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "node index.js"
+    "start": "node app.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
@@ -22,7 +22,6 @@
     "passport": "^0.7.0",
     "passport-github2": "^0.1.12",
     "passport-local": "^1.0.0",
-    "path": "^0.12.7",
     "pg": "^8.11.3"
   },
   "engines": {
