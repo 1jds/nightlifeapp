@@ -157,6 +157,10 @@ app.use(passport.session());
 console.log(__dirname);
 console.log(path.resolve(__dirname, "./dist"));
 
+app.get("/", function (req, res) {
+  res.sendFile(path.join(__dirname, "../client/dist/index.html"));
+});
+
 // app.use(express.static(path.resolve(__dirname, "./dist")));
 
 // app.get("/", (req, res) => {
@@ -501,13 +505,13 @@ function getVenuesAttendingIds(userId, callback) {
   );
 }
 
-// Serve React static files
-app.use(express.static(path.join(__dirname, "../client/dist")));
+// // Serve React static files
+// app.use(express.static(path.join(__dirname, "../client/dist")));
 
-// Catch-all route for React app
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/dist/index.html"));
-});
+// // Catch-all route for React app
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../client/dist/index.html"));
+// });
 
 // --------------------------------------------- //
 // ------------------  SERVER  ----------------- //
