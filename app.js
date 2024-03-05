@@ -20,6 +20,7 @@ const API_KEY = process.env.YELP_API_KEY;
 
 // -------- CORS -------- //
 const acceptedOrigins = [
+  /^https:\/\/pleasant-worm-stockings\.cyclic\.app/,
   /^https:\/\/nightlife-8ddy\.onrender\.com.*/,
   /^https:\/\/github\.com.*/,
 ];
